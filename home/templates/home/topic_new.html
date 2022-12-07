@@ -1,0 +1,10 @@
+{% extends 'home/base_generic.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <h1>New topic</h1>
+    <form method="POST" class="topic-form">{% csrf_token %}
+        {{ form_name|crispy }}
+        {{ form_comment|crispy }}
+        <button type="submit" class="btn">Create</button>
+    </form>
+{% endblock %}

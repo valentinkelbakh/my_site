@@ -1,0 +1,18 @@
+{% extends 'home/base_generic.html' %}
+
+{% block content %}
+
+<div class="container">
+    <h3>{{ entry.title}}</h3>
+    {% if entry.photo%}
+    <a href="{{ entry.photo.url }}" target="_blank">
+        <div class="text-center">
+            <img class='picture' src="{{ entry.photo.url }}" alt="img" style="max-width:90%">
+        </div>
+    </a>
+    {% endif%}
+    <p class="p-2" style="text-indent: 3em;white-space: break-spaces;">{{ entry.text|safe}}</p>
+    <p class="text-end p-2">{{ entry.published_date }}</p>
+</div>
+
+{% endblock %}

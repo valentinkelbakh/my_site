@@ -1,0 +1,59 @@
+{% extends 'home/base_generic.html' %}
+{% block style%}
+<style>
+    .btn {
+        background-color: #04AA6D;
+        color: #f2f2f2;
+        padding-left: 0.8em;
+        padding-right: 0.8em;
+        padding-top: 0.4em;
+        padding-bottom: 0.4em;
+    }
+
+    .btn:hover {
+        background-color: black;
+        color: #f2f2f2;
+    }
+</style>
+{% endblock%}
+{% block content %}
+<div class="d-flex justify-content-between">
+    <div class="p-2">
+        <!-- <h1>Here will be the blog</h1> -->
+    </div>
+    {% if perms.home.add_entry %}
+    <div class="p-2">
+        <a href="{% url 'entry_new' %}" class="btn" role="button">Add post</a>
+    </div>
+    {% endif %}
+</div>
+{% for entry in entries %}
+<article>
+    <a href="{% url 'entry_detail' entry_pk=entry.pk %}">
+        <h3>{{ entry.title}}:</h3>
+        <div class="d-flex ">
+            {% if entry.photo%}
+            <div class="p-2">
+                <img class='picture' src="{{ entry.photo.url }}" alt="img">
+            </div>
+            {% endif%}
+    </a>
+    <div class="p-2 flex-grow-1">
+        <div class="d-flex flex-column" style="min-height: 100%;height: 100%;">
+            <div class="p-0" style="height: 100%;">
+                <p>{{ entry.text|slice:":400"}} ...</p>
+            </div>
+            <div class="ml-auto p-0 flex-grow-1">
+                <div class="d-flex flex-row justify-content-end">
+                    <p style="padding-right:1em;">{{ entry.published_date }}</p>
+                    <a href="{% url 'entry_detail' entry_pk=entry.pk %}" class="btn" role="button">Read
+                        more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <hr>
+</article>
+{% endfor %}
+{% endblock %}

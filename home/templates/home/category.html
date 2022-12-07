@@ -1,0 +1,50 @@
+{% extends 'home/base_generic.html' %}
+{% block style %}
+<style>
+    a.btn{
+        font-size: 1em;
+    }
+</style>
+{% endblock %}
+{% block content %}
+
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    <div class="d-flex flex-row justify-content-between">
+                        <div>
+                            Topics
+                        </div>
+                        {% if perms.home.add_topic %}
+                        <div>
+                            <a href="{% url 'topic_new' category_pk=category.pk%}" class="btn" role="button">Add new Topic</a>
+                        </div>
+                        {% endif %}
+                    </div>
+                    
+                </th>
+                <th>Authors</th>
+                <th>Comments</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for topic in topics %}
+            <tr>
+                <td>
+                    <a href="{% url 'topic' category_pk=category.pk topic_pk=topic.pk %}">{{topic.name}}</a>
+                </td>
+                <td>
+                    {{topic.author}}
+                </td>
+                <td>
+                    {{topic.CommentNumber}}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

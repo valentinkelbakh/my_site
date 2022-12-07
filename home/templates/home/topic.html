@@ -1,0 +1,46 @@
+{% extends 'home/base_generic.html' %}
+
+{% block content %}
+<style>
+    main .container  {
+        max-width: 1500px;
+    }
+
+</style>
+
+<h2>{{topic.name}}</h2>
+
+
+
+{% for comment in comments%}
+<div class="comment">
+    <div class="d-flex justify-content-between">
+        <div class="pt-2">
+            <h5>{{comment.author}}</h5>
+        </div>
+        <div class="pt-2">
+            <span>{{comment.date}}</span>
+        </div>
+    </div>
+    <div class='d-flex'>
+        <p class="pb-2 comment" style="white-space: break-spaces;">&Tab;{{comment.text|safe}}</p>
+    </div>
+    <hr>
+</div>
+{% endfor %}
+
+{% load crispy_forms_tags %}
+
+{% if perms.home.add_comment%}
+<div class="pb-4">
+  <h5>Leave comment</h5>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button class="btn" type="submit">Send</button>
+  </form>
+</div>
+{% else %}
+    <p class="p-2"><h4><a href="{% url 'login' %}" class="btn" role="button">Login</a> or <a href="{% url 'register' %}" class="btn" role="button">Register</a> to add comments</p></h4>
+{% endif %}
+{% endblock %}
