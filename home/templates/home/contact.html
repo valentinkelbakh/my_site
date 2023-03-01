@@ -1,0 +1,35 @@
+{% extends 'home/base_generic.html' %}
+
+{% block content %}
+
+<div style="margin-left:20%">
+    <div>
+        <h3>Get in touch</h3>
+        <p class="pt-2 ps-2">Address:</p>
+        <p class="p-2">Kazakhstan, Qaraghandy, Kazybek bi, Ryskulov 5 100026</p>
+        <p class="ps-2">Contact phone number:</p>
+        <p class="p-2"><a href="tel:+77479309084" class="contact-phone">+7 747 930 90 84</a></p>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2125.538226574035!2d73.15086339739238!3d49.77016561393959!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x42433887a6edbe15%3A0xcb4095738c29f994!2z0YPQuy4g0KDRi9GB0LrRg9C70L7QstCwIDUsINCa0LDRgNCw0LPQsNC90LTQsCAxMDAwMDA!5e0!3m2!1sru!2skz!4v1670252457626!5m2!1sru!2skz"
+            width="600" height="450" style="border:0;max-width: 100%;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe> <br>
+        <p class="p-2">You can reach us via social media:</p>
+        <div class="ps-2 instagram"><a href="https://www.instagram.com/valentinkelbakh/" target="_blank">
+                <p id="instagram">Instagram</p>
+            </a></div>
+        <div class="ps-2"><a href="https://www.facebook.com/valentin.kelbakh/" target="_blank">
+                <p id="facebook">Facebook</p>
+            </a></div>
+        <div class="ps-2 "><a href="{% url 'contact'%}" target="_blank">
+                <p id="vk">VK</p>
+            </a></div>
+        <div class="ps-2"><a href="https://telegram.me/Hrtmnn1304" target="_blank">
+                <p id="telegram">Telegram</p>
+            </a></div>
+        <div class="ps-2 pb-2 "><a href="https://www.bandlab.com/kelbakh" target="_blank">
+                <p id="bandlab">Bandlab</p>
+            </a></div>
+    </div>
+</div>
+
+{% endblock %}

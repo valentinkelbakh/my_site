@@ -1,0 +1,69 @@
+{% extends 'home/base_generic.html' %}
+{% load static %}
+{% block style %}
+<style>
+  img {
+    width: 8em;
+    height: 8em;
+    object-fit: cover;
+  }
+
+  header {
+    margin-bottom: 2em !important;
+  }
+
+  blockquote {
+    font-size: 1.10em !important;
+  }
+</style>
+{% endblock %}
+{% block jumbotron %}
+<div class="jumbotron d-flex flex-column">
+  <div class="container">
+    <h2 class="display-4">Start playing music!</h2>
+    <p class="lead">Begin your way as a musician with our free trial lesson for guitar, accordion, or keys.</p>
+    <hr class="my-4">
+    <p class="mb-2">Book a lesson and try yourself in music already on this week.</p>
+    <a class="btn justify-content-center mb-4" href="{% url 'book_lesson' %}" role="button">Book Lesson Now</a>
+  </div>
+</div>
+{% endblock %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 justify-content-center">
+      <div class="text-center">
+        <img src="{% static 'home\guy1.jpg' %}" width=140px height=140px class="rounded-circle">
+      </div>
+      <blockquote class="blockquote text-center">
+        <p>"These lessons are the reason i started to feel the rhythm really well. Now I play guitar in jazz band.
+          Priceless education for a musician, I think."</p><br>
+        <footer class="blockquote-footer">Vikent Kertrax</footer>
+      </blockquote>
+    </div>
+    <div class="col-md-4 justify-content-center">
+      <div class="text-center">
+        <img src="{% static 'home\guy2.jpg' %}" width=140px height=140px class="rounded-circle">
+      </div>
+      <blockquote class="blockquote text-center">
+        <p>Bayan is not a simple instrument but I didn't issued any trouble with Künstler. Even left hand became easy to
+          understand and use.</p><br>
+        <footer class="blockquote-footer">Valens Keilbach</footer>
+      </blockquote>
+    </div>
+    <div class="col-md-4 justify-content-center">
+      <div class="text-center">
+        <img src="{% static 'home\guy3.jpg' %}" width=140px height=140px class="rounded-circle">
+      </div>
+      <blockquote class="blockquote text-center">
+        <p>Bereits im zweiten Jahr lerne ich Musik mit Künstler Lehrer und ich muss sagen, ich werde immer stärker, wenn
+          ich klassische Musik auf meinem Keyboard spiele.
+        </p><br>
+        <footer class="blockquote-footer">Edward Beathoven</footer>
+      </blockquote>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+{% endblock %}

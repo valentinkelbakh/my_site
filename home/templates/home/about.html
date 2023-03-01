@@ -1,0 +1,45 @@
+{% extends 'home/base_generic.html' %}
+{% block style %}
+<style>
+    a.link {
+        color: #04AA6D;
+    }
+
+    a.link:hover {
+        color: black;
+    }
+</style>
+{% endblock %}
+{% block content %}
+{% load static %}
+<h2>About me</h2>
+<div class="row">
+    <div class="col-lg-8" style="text-indent: 3em;">
+        <p>
+            In the childhood i was usual kid who was not at all interested in music.
+            I went to school and stuff and had pretty much as boring life as everyone else.
+            I graduated school at some point and went to the college.
+        </p>
+        <p>
+            It could long for eternity, but eventually i found a Musical Instrument at the roof of my house.
+            Few months passed as I was studying music all by myself and I bought myself a guitar.
+            Since that day my musical self-education went even quicker. During my educational process I
+            always spent much time on theory. This is how I started growing as one of the strongest musicians
+            among my friends.
+        </p>
+        <p>
+            I realized that I can help people in learning music, gathered teachers and organized music courses.
+        </p>
+        <p class="pb-2">
+            Nowadays I am really competent musician, but, as you can see, my story began pretty obvious.
+            That means anyone can <a class='link' href="{% url 'book_lesson' %}">start learning music today and lay the
+                foundation of
+                future yourself as a Musician.</a>
+        </p>
+    </div>
+    <div class="col-lg-4 pb-2 text-center" style="float:right">
+        <img src="{% static 'home\about.jpg' %}" style="width:16em;">
+    </div>
+</div>
+
+{% endblock %}
